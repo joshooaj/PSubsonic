@@ -17,7 +17,7 @@
             LicenseUri = 'https://github.com/joshooaj/PSubsonic/blob/main/LICENSE'
             ProjectUri = 'https://github.com/joshooaj/PSubsonic'
             # IconUri = ''
-            # ReleaseNotes = ''
+            ReleaseNotes = 'See the changelog at https://www.joshooaj.com/PSubsonic/CHANGELOG/'
         }
     }
 }
