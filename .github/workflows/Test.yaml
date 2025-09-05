@@ -10,12 +10,14 @@ on:
     paths-ignore:
       - .github/workflows/Docs.yml
       - .github/workflows/Publish.yml
+      - docs/README.md
   pull_request:
     branches:
       - main
     paths-ignore:
       - .github/workflows/Docs.yml
       - .github/workflows/Publish.yml
+      - docs/README.md
 
 jobs:
   test:

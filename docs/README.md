@@ -5,7 +5,7 @@ server. It was initially created as a part of a personal music library
 re-organization project where I simply needed a way to automate triggering a
 library scan in [Navidrome](https://github.com/navidrome/navidrome).
 
-**NOTE: I am aware that this module is not yet documented**
+_**Note:** PSubsonic is pronounced "subsonic"_
 
 ## Installation
 
