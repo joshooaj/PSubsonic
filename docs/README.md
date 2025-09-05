@@ -44,3 +44,10 @@ Get-PSubIndex
 ```powershell
 Get-PSubNowPlaying
 ```
+
+### TODO
+
+- Write documentation
+- Write integration tests to run against a live Navidrome instance
+- Add support for more Subsonic API methods
+- Explore alternative output formatting for better support for piping or chaining commands together.
