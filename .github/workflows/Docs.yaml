@@ -1,0 +1,28 @@
+name: Docs
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - docs/**
+      - mkdocs.yml
+      - .github/workflows/Docs.yml
+
+jobs:
+  DeployDocs:
+    # Grant the minimum permissions necessary for this job to publish to GitHub Pages
+    permissions:
+      contents: write
+      pages: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: MkDocs GH-Deploy
+        if: github.ref == 'refs/heads/main'
+        shell: pwsh
+        run: .\build.ps1 -Bootstrap -Task PublishDocs
