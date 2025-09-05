@@ -13,6 +13,8 @@ server. It was initially created as a part of a personal music library
 re-organization project where I simply needed a way to automate triggering a
 library scan in [Navidrome](https://github.com/navidrome/navidrome).
 
+![Example of using Set-PSubRating and Set-PSubStar commands](assets/images/PSubsonic-Rating-Star-Demo.gif)
+
 _**Note:** PSubsonic is pronounced "subsonic"_
 
 ## Installation
