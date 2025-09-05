@@ -1,3 +1,11 @@
+![GitHub Actions Test Workflow Status](https://img.shields.io/github/actions/workflow/status/joshooaj/PSubsonic/Test.yaml?label=build%2Ftest)
+![GitHub Actions Docs Workflow Status](https://img.shields.io/github/actions/workflow/status/joshooaj/PSubsonic/Docs.yaml?label=docs)
+![GitHub Actions Publish Workflow Status](https://img.shields.io/github/actions/workflow/status/joshooaj/PSubsonic/Publish.yaml?label=publish)
+![PowerShell Gallery Version](https://img.shields.io/powershellgallery/v/PSubsonic)
+![PowerShell Gallery Downloads](https://img.shields.io/powershellgallery/dt/PSubsonic)
+![GitHub License](https://img.shields.io/github/license/joshooaj/PSubsonic)
+[![Built with Material for MkDocs](https://img.shields.io/badge/Material_for_MkDocs-526CFE?style=for-the-badge&logo=MaterialForMkDocs&logoColor=white)](https://squidfunk.github.io/mkdocs-material/)
+
 # PSubsonic
 
 PSubsonic is an experimental PowerShell module for interacting with a Subsonic
