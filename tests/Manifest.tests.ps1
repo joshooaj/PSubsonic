@@ -1,8 +1,8 @@
 BeforeAll {
-    
+
     # NEW: Pre-Specify RegEx Matching Patterns
     $gitTagMatchRegEx   = 'tag:\s?.(\d+(\.\d+)*)' # NOTE - was 'tag:\s*(\d+(?:\.\d+)*)' previously
-    $changelogTagMatchRegEx = "^##\s\[(?<Version>(\d+\.){1,3}\d+)\]"    
+    $changelogTagMatchRegEx = "^##\s\[(?<Version>(\d+\.){1,3}\d+)\]"
 
     $moduleName         = $env:BHProjectName
     $manifest           = Import-PowerShellDataFile -Path $env:BHPSModuleManifest
@@ -12,7 +12,7 @@ BeforeAll {
     $outputManifestPath = Join-Path -Path $outputModVerDir -Child "$($moduleName).psd1"
     $manifestData       = Test-ModuleManifest -Path $outputManifestPath -Verbose:$false -ErrorAction Stop -WarningAction SilentlyContinue
 
-    $changelogPath    = Join-Path -Path $env:BHProjectPath -Child 'CHANGELOG.md'
+    $changelogPath    = Join-Path -Path $env:BHProjectPath -Child 'docs/CHANGELOG.md'
     $changelogVersion = Get-Content $changelogPath | ForEach-Object {
         if ($_ -match $changelogTagMatchRegEx) {
             $changelogVersion = $matches.Version
@@ -72,7 +72,7 @@ Describe 'Module manifest' {
 Describe 'Git tagging' -Skip {
     BeforeAll {
         $gitTagVersion = $null
-        
+
         # Ensure to only pull in a single git executable (in case multiple git's are found on path).
         if ($git = (Get-Command git -CommandType Application -ErrorAction SilentlyContinue)[0]) {
             $thisCommit = & $git log --decorate --oneline HEAD~1..HEAD
