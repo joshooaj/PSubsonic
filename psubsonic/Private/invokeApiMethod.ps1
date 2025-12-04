@@ -7,7 +7,11 @@ function invokeApiMethod {
 
         [Parameter()]
         [System.Collections.IDictionary]
-        $OptionalParameters = @{}
+        $OptionalParameters = @{},
+
+        [Parameter()]
+        [hashtable]
+        $AdditionalIrmParams = @{}
     )
 
     process {
@@ -25,12 +29,12 @@ function invokeApiMethod {
         }
         $uriBuilder.Query = $params.ToString()
 
-        $response = (Invoke-RestMethod $uriBuilder.Uri -ErrorAction Stop).'subsonic-response'
+        $response = (Invoke-RestMethod $uriBuilder.Uri -ErrorAction Stop @AdditionalIrmParams).'subsonic-response'
         if ($null -ne $response.error) {
             Write-Error -Message "Subsonic API returned error code $($response.error.code): $($response.error.Message)"
             return
         }
-        
+
         $response
     }
 }
