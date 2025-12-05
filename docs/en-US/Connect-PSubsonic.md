@@ -9,7 +9,7 @@ schema: 2.0.0
 
 ## SYNOPSIS
 
-Authenticate with a Subsonic server and 
+Establishes or updates the module's connection to a Subsonic server and verifies connectivity.
 
 ## SYNTAX
 
@@ -19,21 +19,28 @@ Connect-PSubsonic [[-Address] <Uri>] [[-Credential] <PSCredential>] [-ProgressAc
 ```
 
 ## DESCRIPTION
-{{ Fill in the Description }}
+
+Authenticates with a Subsonic server using the provided address and credential
+by calling the "ping.view" method. If successful, the address and credential are
+stored in memory and reused in other commands in the module.
 
 ## EXAMPLES
 
 ### Example 1
+
 ```powershell
-PS C:\> {{ Add example code here }}
+$cred = Get-Credential
+Connect-PSubsonic -Address https://music.example.local -Credential $cred
 ```
 
-{{ Add example description here }}
+Prompt for credentials, and then connect to a fictional Subsonic server.
 
 ## PARAMETERS
 
 ### -Address
-{{ Fill Address Description }}
+
+The fully qualified URI of a Subsonic server, including the HTTP or HTTPS scheme
+and the port number if not using the default for the provided scheme (80 or 443 respectively).
 
 ```yaml
 Type: Uri
@@ -48,7 +55,8 @@ Accept wildcard characters: False
 ```
 
 ### -Credential
-{{ Fill Credential Description }}
+
+The username and password used to authenticate with the Subsonic server.
 
 ```yaml
 Type: PSCredential
@@ -78,6 +86,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
@@ -87,6 +96,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 ## OUTPUTS
 
 ### System.Object
+
+The response to the `ping.view` Subsonic API method.
+
 ## NOTES
 
 ## RELATED LINKS
+
+https://subsonic.org/pages/api.jsp
