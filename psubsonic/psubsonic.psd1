@@ -1,6 +1,6 @@
 @{
     RootModule        = 'psubsonic.psm1'
-    ModuleVersion     = '0.1.1'
+    ModuleVersion     = '0.1.2'
     GUID              = '9fe85c90-7c4e-4b62-9185-9eee13ad216d'
     Author            = 'joshooaj'
     CompanyName       = 'joshooaj'
